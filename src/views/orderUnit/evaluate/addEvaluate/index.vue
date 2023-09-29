@@ -39,6 +39,7 @@
 import { Toast, Rate, Field, Switch, Uploader } from 'vant';
 export default {
     name: "evaluate",
+    components: { VanToast: Toast, VanRate: Rate, VanField: Field, VanSwitch: Switch, VanUploader: Uploader },
     data() {
         return {
             like_value: 0,

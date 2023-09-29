@@ -67,6 +67,7 @@
 import { Rate } from 'vant';
 export default {
     name: "evaluateDetails",
+    components: { VanRate: Rate },
     data() {
         return {
             message: '',

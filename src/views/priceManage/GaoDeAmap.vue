@@ -38,6 +38,7 @@
 <script>
 import { Search, Area } from 'vant';
 export default {
+    components: { VanSearch: Search, VanArea: Area },
   data: function () {
     let self = this
     return {

@@ -31,11 +31,10 @@
 <script>
 import cancelOrder from "./cancelOrder";
 import popularityHot from "./popularityHot";
-import { Dialog } from 'vant';
-import { Toast } from 'vant';
+import { Toast, Dialog } from 'vant';
 export default {
     name: "fabulous",
-    components: { popularityHot, cancelOrder },
+    components: { popularityHot, cancelOrder, VanToast: Toast, VanDialog: Dialog },
     props: {
         tab_active: {
             type: Number,

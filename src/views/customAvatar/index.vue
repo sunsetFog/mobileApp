@@ -34,7 +34,7 @@ export default {
   name: 'customAvatar',
   components: {
     VueCropper,
-    VanButton
+    VanButton: Button
   },
   data () {
     return {

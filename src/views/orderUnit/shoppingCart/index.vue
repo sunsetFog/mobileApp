@@ -36,6 +36,7 @@
 import { Checkbox, Field, Stepper } from 'vant';
 export default {
     name: "shoppingCart",
+    components: { VanCheckbox: Checkbox, VanField: Field, VanStepper: Stepper },
     data() {
         return {
             edit_active: false,

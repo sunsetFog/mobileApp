@@ -54,7 +54,7 @@ import fresh from './fresh'
 import popularityHot from './popularityHot'
 export default {
     name: "searchProducts",
-    components: { fresh, popularityHot },
+    components: { fresh, popularityHot, VanIcon: Icon, VanSearch: Search, VanActionSheet: ActionSheet },
     data() {
         return {
             search_value: '',

@@ -65,7 +65,7 @@ import { Switch } from 'vant';
 import popularityHot from "./popularityHot"
 export default {
     name: "fillOrder",
-    components: { popularityHot },
+    components: { popularityHot, VanSwitch: Switch },
     data() {
         return {
             integral_active: false

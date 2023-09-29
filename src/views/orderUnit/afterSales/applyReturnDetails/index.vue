@@ -60,6 +60,7 @@
 import { Steps, Step } from 'vant';
 export default {
     name: "applyReturnDetails",
+    components: { VanSteps: Steps, VanStep: Step },
     data() {
         return {
             step_status: 1

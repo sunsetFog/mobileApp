@@ -84,7 +84,7 @@
 import { Overlay } from 'vant';
 export default {
   name: '',
-  components: {VanOverlay: Overlay},
+  components: { VanOverlay: Overlay },
   props: ['title'],
   data () {
     return {

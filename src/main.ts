@@ -9,6 +9,9 @@ import '@root/global.css';
 import '@root/global.less';
 import '@root/global.scss';
 
+// rem
+import '@sky/static/capital/rem.js';
+
 // vant样式
 import 'vant/lib/index.css';
 
@@ -20,6 +23,10 @@ import '@/database/index';
 
 
 const rainbow = createApp(App);
+
+// 全局注册组件
+import HeadDesign from '@/components/headDesign.vue';
+rainbow.component('HeadDesign', HeadDesign);
 
 import means from '@/public/index.js';
 rainbow.config.globalProperties.$means = means;

@@ -102,6 +102,7 @@
 import { Tabs, Tab, Icon, Search } from 'vant';
 export default {
   name: 'searchFor',
+  components: { VanTabs: Tabs, VanTab: Tab, VanIcon: Icon, VanSearch: Search },
   data () {
     return {
       search_value: '',

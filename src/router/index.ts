@@ -20,8 +20,34 @@ import FirstRouter from './modules/firstRouter.js';
 // ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes: FirstRouter,
+    history: createWebHistory(process.env.BASE_URL),
+    routes: FirstRouter,
 })
+
+// 路由拦截
+router.beforeEach((to, from, next) => {
+    if (from.path == '/' && to.path != '/login') {
+        // @ts-ignore
+        // if (VueCookies.get(process.env.VUE_APP_TOKEN_KEY)) {
+        //     store.dispatch('routerApple').then(function (value) {
+        //         for (let i = 0; i < value.length; i++) {
+        //             const item = value[i];
+        //             router.addRoute(item);
+        //         }
+        //         console.log('--then结束-2-', router.getRoutes());
+        //         next();
+        //     });
+        // } else {
+            next({ path: '/login' });
+        // }
+    } else {
+        next();
+    }
+});
+// 路由结束时
+router.afterEach((to, from) => {
+
+});
+
 
 export default router

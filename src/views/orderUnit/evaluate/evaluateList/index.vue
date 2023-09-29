@@ -51,7 +51,7 @@ import { Tabs, Tab } from 'vant';
 import popularityHot from "./popularityHot"
 export default {
     name: "evaluateList",
-    components: { popularityHot },
+    components: { popularityHot, VanTabs: Tabs, VanTab: Tab },
     data() {
         return {
             tab_active: 0

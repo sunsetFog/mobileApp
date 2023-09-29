@@ -31,6 +31,7 @@
 import { Switch } from 'vant';
 export default {
     name: "registerUnit",
+    components: { VanSwitch: Switch },
     data() {
         return {
             withForm: {

@@ -58,6 +58,7 @@
 import { Steps, Step } from 'vant';
 export default {
     name: "logistics",
+    components: { VanSteps: Steps, VanStep: Step },
     data() {
         return {
             step_active: 1,

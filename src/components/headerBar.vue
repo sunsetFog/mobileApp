@@ -28,7 +28,7 @@
 import { Overlay } from 'vant';
 export default {
     name: 'headerBar',
-    components: {VanOverlay: Overlay},
+    components: { VanOverlay: Overlay },
     data () {
         return {
             forum: false

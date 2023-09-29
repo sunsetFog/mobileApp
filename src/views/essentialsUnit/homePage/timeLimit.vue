@@ -34,7 +34,7 @@
 import { CountDown } from 'vant';
 export default {
     name: "timeLimit",
-    components: { CountDown },
+    components: { VanCountDown: CountDown },
     data() {
         return {
             with_time: 2 * 60 * 60 * 1000,// 单位为毫秒

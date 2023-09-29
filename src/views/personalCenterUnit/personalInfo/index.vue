@@ -73,6 +73,7 @@
 import { RadioGroup, Radio } from 'vant';
 export default {
     name: "personalInfo",
+    components: { VanRadioGroup: RadioGroup, VanRadio: Radio },
     data() {
         return {
             withForm: {

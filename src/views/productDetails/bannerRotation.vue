@@ -16,7 +16,8 @@
 <script>
 import { Swipe, SwipeItem } from 'vant';
 export default {
-    name: "bannerRotation"
+    name: "bannerRotation",
+    components: { VanSwipe: Swipe, VanSwipeItem: SwipeItem }
 }
 </script>
 

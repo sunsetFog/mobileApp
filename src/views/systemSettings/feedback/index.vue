@@ -32,6 +32,7 @@
 import { Toast, Field, Uploader } from 'vant';
 export default {
     name: "feedback",
+    components: { VanToast: Toast, VanField: Field, VanUploader: Uploader },
     data() {
         return {
             message: '',

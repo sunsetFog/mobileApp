@@ -39,6 +39,7 @@
 import { Icon, Search } from 'vant';
 export default {
     name: "searchUnit",
+    components: { VanIcon: Icon, VanSearch: Search },
     data() {
         return {
             search_value: '',

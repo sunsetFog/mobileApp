@@ -52,6 +52,7 @@
 import { Toast, Field, Uploader } from 'vant';
 export default {
     name: "applyReturn",
+    components: { VanToast: Toast, VanField: Field, VanUploader: Uploader },
     data() {
         return {
             message: '',

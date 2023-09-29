@@ -48,7 +48,7 @@ import { Toast, Tabs, Tab } from 'vant';
 import introduction from './introduction'
 export default {
     name: "productDetails",
-    components: { introduction },
+    components: { introduction, VanToast: Toast, VanTabs: Tabs, VanTab: Tab },
     data() {
         return {
             tab_active: 0

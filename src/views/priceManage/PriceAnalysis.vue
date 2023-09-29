@@ -68,6 +68,7 @@ import Loading from '@/components/common/Loading'
 import drawing from './echart.js'
 export default {
   name: 'PriceAnalysis',
+  components: { VanIcon: Icon },
   data () {
     return {
       loading: false,
