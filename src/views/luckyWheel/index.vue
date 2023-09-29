@@ -80,12 +80,15 @@
 </template>
 
 <script>
-// import { LuckyWheel } from '@lucky-canvas/vue';
-import { LuckyWheel } from 'vue-luck-draw';
+// vue3 @lucky-canvas/vue
+import { LuckyWheel } from '@lucky-canvas/vue';
+// vue2 vue-luck-draw
+// import { LuckyWheel } from 'vue-luck-draw';
 // import { gongGeMyInfo, startGongGe, recordAppList } from '@/api/home';
+import { Dialog } from 'vant';
 export default {
     name: "turntable",
-    components: { LuckyWheel },
+    components: { LuckyWheel, VanDialog: Dialog },
     data() {
         return {
             blocks: [

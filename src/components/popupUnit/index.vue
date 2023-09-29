@@ -4,8 +4,8 @@
             <main>
                 <van-tree-select
                 :items="menuList"
-                :active-id.sync="activeId"
-                :main-active-index.sync="activeIndex"
+                v-model:active-id="activeId"
+                v-model:main-active-index="activeIndex"
                 height="100%"
                 @click-item="goWay"
                 ></van-tree-select>

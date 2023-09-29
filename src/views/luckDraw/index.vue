@@ -85,7 +85,8 @@
 vue实现九宫格抽奖---次要，看看就好
 https://www.jq22.com/jquery-info22357
 */
-import { LuckyGrid } from "vue-luck-draw";// LuckyWheel是罗盘抽奖
+// import { LuckyGrid } from "vue-luck-draw";// LuckyWheel是罗盘抽奖
+import { LuckyGrid } from '@lucky-canvas/vue'
 import { luckyDrawMyInfo, startLuckyDraw } from "./api";
 import { Dialog } from "vant";
 import upAndDown from "./upAndDown.vue";

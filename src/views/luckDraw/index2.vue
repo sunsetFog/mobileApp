@@ -13,7 +13,8 @@
         </div>
         <LuckyGrid ref="LuckDraw" class="lucky-grid" width="22.18rem" height="19.37rem" :prizes="prizes" :buttons="buttons"
             :blocks="blocks" :default-config="defaultConfig" :default-style="defaultStyle" :active-style="activeStyle"
-            @start="startCallBack" @end="endCallBack" />
+            @start="startCallBack" @end="endCallBack" ></LuckyGrid>
+
         <button class="earning-times" @click="earningTimes()">
             <van-icon name="like" color="#FAE9D0" />
             赚取次数
@@ -132,7 +133,8 @@
 
 <script>
 import { NoticeBar, Swipe, SwipeItem, Icon, Popup, List, Dialog } from 'vant';
-import { LuckyGrid } from 'vue-luck-draw'
+// import { LuckyGrid } from 'vue-luck-draw'
+import { LuckyGrid } from '@lucky-canvas/vue'
 export default {
     name: 'luckyDraw',
     components: { LuckyGrid, VanNoticeBar: NoticeBar, VanSwipe: Swipe, VanSwipeItem: SwipeItem, VanIcon: Icon, VanPopup: Popup, VanList: List, VanDialog: Dialog },

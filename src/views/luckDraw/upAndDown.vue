@@ -88,7 +88,7 @@ export default {
               }
 
               to {
-                  transform: translate3d(0, @ul_height_half * -1, 0);// 负数是移动方向
+                  transform: translate3d(0, calc(@ul_height_half * -1), 0);// 负数是移动方向
               }
           }
           ul {
