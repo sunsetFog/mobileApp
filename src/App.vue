@@ -1,30 +1,49 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+    <div class="watermark" v-if="watermark_list.indexOf($route.path) != -1"></div>
+    <router-view />
+    <PopupUnit></PopupUnit>
 </template>
+
+<script>
+import PopupUnit from '@/components/popupUnit/index';
+export default {
+    name: "App",
+    components: { PopupUnit },
+    data() {
+        return {
+            watermark_list: [
+                '/home',
+                '/priceManage/PriceAnalysis',
+                '/priceManage/index',
+                '/receivable/AR'
+            ]
+        };
+    },
+    watch: {
+
+    },
+    methods: {
+
+    }
+};
+</script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
     color: #2c3e50;
 
-    &.router-link-exact-active {
-      color: #42b983;
+    .watermark {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #001018;
+        z-index: -1;
     }
-  }
 }
 </style>
