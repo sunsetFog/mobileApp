@@ -30,52 +30,52 @@ Mock.setup({
  * 菜单1
  * @param
  */
-Mock.mock(process.env.mock_url + "/role/menu", "post", menu);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/role/menu", "post", menu);
 /**
  * 所在区域和选择项目
  * @param
  */
-Mock.mock(process.env.mock_url + "/role/power", "post", power);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/role/power", "post", power);
 /**
  * 定位失败后，默认城市
  * @param
  */
-Mock.mock(process.env.mock_url + "/role/selectDefaultCity", "post", selectDefaultCity);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/role/selectDefaultCity", "post", selectDefaultCity);
 /**
  * 选择城市
  * @param
  */
-Mock.mock(process.env.mock_url + "/mktinformationoperativemenu/orgCityListFull", "post", orgCityListFull);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/mktinformationoperativemenu/orgCityListFull", "post", orgCityListFull);
 /**
  * 项目列表
  * @param
  */
-Mock.mock(process.env.mock_url + "/priceAnalysis/allCityPriceAnalysis", "post", allCityPriceAnalysis);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/priceAnalysis/allCityPriceAnalysis", "post", allCityPriceAnalysis);
 /**
  * 搜索项目
  * @param
  */
-Mock.mock(process.env.mock_url + "/priceAnalysis/selectProjectByProjectName", "post", selectProjectByProjectName);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/priceAnalysis/selectProjectByProjectName", "post", selectProjectByProjectName);
 /**
  * 项目详情
  * @param
  */
-Mock.mock(process.env.mock_url + "/priceAnalysis/priceAnalysisList", "post", priceAnalysisList);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/priceAnalysis/priceAnalysisList", "post", priceAnalysisList);
 /**
  * 项目详情图表
  * @param
  */
-Mock.mock(process.env.mock_url + "/priceAnalysis/priceAnalysisTrendData", "post", priceAnalysisTrendData);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/priceAnalysis/priceAnalysisTrendData", "post", priceAnalysisTrendData);
 
 
 
-Mock.mock(process.env.mock_url + "/accountsReceivable/inTransitMortgage", "post", ar.inTransitMortgage);
-Mock.mock(process.env.mock_url + "/accountsReceivable/overdueActualTime", "post", ar.overdueActualTime);
-Mock.mock(process.env.mock_url + "/accountsReceivable/overdueMortgageTotal", "post", ar.overdueMortgageTotal);
-Mock.mock(process.env.mock_url + "/accountsReceivable/overdueProcessingTotal", "post", ar.overdueProcessingTotal);
-Mock.mock(process.env.mock_url + "/accountsReceivable/selectBylist", "post", ar.selectBylist);
-Mock.mock(process.env.mock_url + "/accountsReceivable/structuralAnalysisList", "post", ar.structuralAnalysisList);
-Mock.mock(process.env.mock_url + "/accountsReceivable/structuralMortgage", "post", ar.structuralMortgage);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/accountsReceivable/inTransitMortgage", "post", ar.inTransitMortgage);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/accountsReceivable/overdueActualTime", "post", ar.overdueActualTime);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/accountsReceivable/overdueMortgageTotal", "post", ar.overdueMortgageTotal);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/accountsReceivable/overdueProcessingTotal", "post", ar.overdueProcessingTotal);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/accountsReceivable/selectBylist", "post", ar.selectBylist);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/accountsReceivable/structuralAnalysisList", "post", ar.structuralAnalysisList);
+Mock.mock(process.env.VUE_APP_MOCK_URL + "/accountsReceivable/structuralMortgage", "post", ar.structuralMortgage);
 
 
 

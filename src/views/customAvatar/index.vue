@@ -26,10 +26,16 @@
         <van-button class="que-ding" color="#7232dd" @click="isSure">确 定</van-button>
     </section>
 </template>
+<!--
 
+    安装使用：https://www.npmjs.com/package/vue-cropper/v/0.6.2
+    npm install vue-cropper@next
+
+ -->
 <script>
 import { Button } from 'vant';
-import { VueCropper } from 'vue-cropper'
+import 'vue-cropper/dist/index.css';
+import { VueCropper }  from "vue-cropper";
 export default {
   name: 'customAvatar',
   components: {

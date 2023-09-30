@@ -1,4 +1,5 @@
-import echarts from 'echarts'
+// import echarts from 'echarts'
+import * as echarts from 'echarts'
 export default {
     colorFlowers (index) {
         let arr = ['#60acfc', '#32d3eb', '#5bc49f', '#feb64d', '#ff7c7c', '#9287e7', '#668ED6', '#A3BBE6']

@@ -2,7 +2,10 @@
   <section class="price-analysis" v-show="immortal">
     <header-bar title="项目价格动态分析"></header-bar>
     <div class="location-box">
-      <span class="where-place" @click="wherePlace"><van-icon name="location"/>{{where_place}}</span>
+      <span class="where-place" @click="wherePlace">
+        <!-- <van-icon name="location"></van-icon> -->
+        {{where_place}}
+        </span>
       <div class="open-menu" @click="cityEvent">
         切换项目
         <img src="@sky/static/reportForms/image/menu.png">
@@ -18,7 +21,7 @@
         </div>
         <div class="grid">
           <div class="grid-cell" style="color: #99CCFF">
-            <span v-if="material_list.deal_PRICE">{{material_list.deal_PRICE|quantile}}元/㎡</span>
+            <span v-if="material_list.deal_PRICE">{{quantile(material_list.deal_PRICE)}}元/㎡</span>
             <span v-else>暂无</span>
           </div>
           <div class="grid-cell">
@@ -62,13 +65,19 @@
 </template>
 
 <script>
-import { Icon } from 'vant';
+import { Icon, Dialog } from 'vant';
 import headerBar from '@/components/headerBar.vue'
 import Loading from '@/components/common/Loading'
 import drawing from './echart.js'
+import CloudEchart from '@/components/echarts/cloudEchart'
 export default {
   name: 'PriceAnalysis',
-  components: { VanIcon: Icon },
+  components: {
+    headerBar,
+    Loading,
+    VanIcon: Icon,
+    CloudEchart
+  },
   data () {
     return {
       loading: false,
@@ -106,12 +115,6 @@ export default {
       return this.$store.state.token
     }
   },
-  filters: {
-    quantile (num) {
-      let dian = num.toFixed(0)
-      return Number(dian).toLocaleString()
-    }
-  },
   watch: {
     token: {
       handler (newData, oldData) {
@@ -122,8 +125,12 @@ export default {
     }
   },
   methods: {
+    quantile (num) {
+      let dian = num.toFixed(0)
+      return Number(dian).toLocaleString()
+    },
     interfaceError (value = '获取信息列表失败,请检查网络！') {
-      this.$dialog.alert({
+      Dialog.alert({
         title: '提醒',
         message: value
       })
@@ -159,7 +166,7 @@ export default {
         'priceType': 'ACT_AVG'
       }
       this.$apihttp({
-        url: '/priceAnalysis/priceAnalysisList',
+        url: process.env.VUE_APP_MOCK_URL + '/priceAnalysis/priceAnalysisList',
         method: 'post',
         data: param
       }).then((res) => {
@@ -189,7 +196,7 @@ export default {
         'projectId': self.$route.query.code
       }
       this.$apihttp({
-        url: '/priceAnalysis/priceAnalysisTrendData',
+        url: process.env.VUE_APP_MOCK_URL + '/priceAnalysis/priceAnalysisTrendData',
         method: 'post',
         data: param
       }).then((res) => {
@@ -305,10 +312,6 @@ export default {
     wherePlace () {
       this.$router.push({ path: '/priceManage/index', query: { place: this.where_place, project_long: this.center[0], project_lat: this.center[1], project_id: this.$route.query.code, location: true } })
     }
-  },
-  components: {
-    headerBar,
-    Loading
   }
 }
 </script>

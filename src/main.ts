@@ -36,14 +36,21 @@ import apiHttp from '@sky/axios/request2/http.js';
 rainbow.config.globalProperties.$apihttp = apiHttp;
 
 
-import VueAMap from 'vue-amap'
+
 import VueCookies from 'vue-cookies';
 
-
+import VueAMap, { initAMapApiLoader } from '@vuemap/vue-amap';
+import '@vuemap/vue-amap/dist/style.css';
+initAMapApiLoader({
+    key: '5c23d261c12ba0bf782654990677d83b',
+    // plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor', 'AMap.Geolocation'],
+    // // 默认高德 sdk 版本为 1.4.4
+    // v: '1.4.4'
+})
 
 rainbow
-.use(VueAMap)
 .use(VueCookies)
+.use(VueAMap)
 .use(store)
 .use(router)
 .mount('#app')

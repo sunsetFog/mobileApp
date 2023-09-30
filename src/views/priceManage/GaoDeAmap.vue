@@ -21,7 +21,7 @@
       <el-amap-marker v-for="(item, index) in markers" :position="item.position" :vid="index" :key="index" :zIndex="item.z_index">
         <div :class="{'add-container': true,'headquarters': item.active}" @click="handler(item)">
           <div class="project-name">{{item.name}}</div>
-          <button class="this-month">本月均价<span v-if="item.month_price">{{item.month_price|quantile}}万/㎡</span><span v-else>-</span></button>
+          <button class="this-month">本月均价<span v-if="item.month_price">{{quantile(item.month_price)}}万/㎡</span><span v-else>-</span></button>
           <span class="compare-month">比上月</span>
           <div class="percentage-i">
             <span>{{item.mom_rate}}%</span>
@@ -34,9 +34,16 @@
     </el-amap>
   </div>
 </template>
-
+<!--
+    vue-amap官网：https://elemefe.github.io/vue-amap/#/zh-cn/examples/base/amap
+    @vuemap/vue-amap官网：https://vue-amap.guyixi.cn/
+    高德开放平台：https://console.amap.com/dev/index
+ -->
 <script>
-import { Search, Area } from 'vant';
+
+
+// import VueAMap from 'vue-amap'
+import { Search, Area, Dialog } from 'vant';
 export default {
     components: { VanSearch: Search, VanArea: Area },
   data: function () {
@@ -160,13 +167,14 @@ export default {
   },
   mounted () {
     this.design()
+    this.amapManager = this.$refs.map.$$getInstance()
   },
   computed: {
     token () {
       return this.$store.state.token
     }
   },
-  filters: {
+  methods: {
     quantile (num) {
       if (num === '') {
         return ''
@@ -174,23 +182,15 @@ export default {
       let chu = Number(num) / 10000
       let dian = chu.toFixed(2)
       return Number(dian).toLocaleString()
-    }
-  },
-  methods: {
+    },
     interfaceError (value = '获取信息列表失败,请检查网络！') {
-      this.$dialog.alert({
+      Dialog.alert({
         title: '提醒',
         message: value
       })
     },
     initMap () {
-      VueAMap.initAMapApiLoader({
-        key: '',
-        plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor', 'AMap.Geolocation'],
-        // 默认高德 sdk 版本为 1.4.4
-        v: '1.4.4'
-      })
-      this.amapManager = new VueAMap.AMapManager()
+
     },
     geoCity () {
       let self = this
@@ -207,7 +207,7 @@ export default {
       }, function (error) {
         console.log('Error:' + error)
         self.defaultCity()
-        self.$dialog.alert({
+        Dialog.alert({
           title: '提醒',
           message: '定位失败，请确认手机定位是否开启！'
         })
@@ -224,7 +224,7 @@ export default {
       const self = this
       let param = {}
       this.$apihttp({
-        url: '/role/selectDefaultCity',
+        url: process.env.VUE_APP_MOCK_URL + '/role/selectDefaultCity',
         method: 'post',
         data: param
       }).then((res) => {
@@ -269,7 +269,7 @@ export default {
 
       }
       this.$apihttp({
-        url: '/mktinformationoperativemenu/orgCityListFull',
+        url: process.env.VUE_APP_MOCK_URL + '/mktinformationoperativemenu/orgCityListFull',
         method: 'post',
         data: param
       }).then((res) => {
@@ -320,7 +320,7 @@ export default {
 
       }
       this.$apihttp({
-        url: '/priceAnalysis/allCityPriceAnalysis',
+        url: process.env.VUE_APP_MOCK_URL + '/priceAnalysis/allCityPriceAnalysis',
         method: 'post',
         data: param
       }).then((res) => {
@@ -379,7 +379,7 @@ export default {
         // 'projectName': '成都'
       }
       this.$apihttp({
-        url: '/priceAnalysis/selectProjectByProjectName',
+        url: process.env.VUE_APP_MOCK_URL + '/priceAnalysis/selectProjectByProjectName',
         method: 'post',
         data: param
       }).then((res) => {

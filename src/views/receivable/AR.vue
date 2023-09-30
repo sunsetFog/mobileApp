@@ -136,14 +136,17 @@
 </template>
 
 <script>
+import { Dialog } from 'vant';
 import headerBar from '@/components/headerBar.vue'
 import drawingLine from './echartLine.js'
 import echartLineBar from './echartLineBar.js'
 import echartBarStack from './echartBarStack.js'
 import echartBar from './echartBar.js'
 import echartPie from './echartPie.js'
+import CloudEchart from '@/components/echarts/cloudEchart.vue'
 export default {
   name: 'receivable',
+  components: { headerBar, CloudEchart },
   data () {
     return {
       title: '置业应收账款分析',
@@ -207,7 +210,7 @@ export default {
       if (!value) {
         return
       }
-      this.$dialog.alert({
+      Dialog.alert({
         title: '提醒',
         message: value
       })
@@ -367,7 +370,7 @@ export default {
       const self = this
       let param = { periodWid: self.dayByday('20201017'), orgId: self.orgKey(self.levelType, '单'), type: self.levelType, cityId: self.cityKey(self.levelType, '单') }
       this.$apihttp({
-        url: '/accountsReceivable/inTransitMortgage',
+        url: process.env.VUE_APP_MOCK_URL + '/accountsReceivable/inTransitMortgage',
         method: 'post',
         data: param
       }).then((res) => {
@@ -391,7 +394,7 @@ export default {
       const self = this
       let param = { periodWid: self.dayByday('20201017'), orgId: self.orgKey(self.levelType + 1, '列'), type: self.levelType + 1, cityId: self.cityKey(self.levelType + 1, '列') }
       this.$apihttp({
-        url: '/accountsReceivable/inTransitMortgage',
+        url: process.env.VUE_APP_MOCK_URL + '/accountsReceivable/inTransitMortgage',
         method: 'post',
         data: param
       }).then((res) => {
@@ -424,7 +427,7 @@ export default {
       const self = this
       let param = { periodWid: self.dayByday('20200911'), orgId: self.orgKey(self.levelType, '单'), type: self.levelType, cityId: self.cityKey(self.levelType, '单') }
       this.$apihttp({
-        url: '/accountsReceivable/selectBylist',
+        url: process.env.VUE_APP_MOCK_URL + '/accountsReceivable/selectBylist',
         method: 'post',
         data: param
       }).then((res) => {
@@ -455,7 +458,7 @@ export default {
       const self = this
       let param = { periodWid: self.dayByday('20200911'), orgId: self.orgKey(self.levelType + 1, '列'), type: self.levelType + 1, cityId: self.cityKey(self.levelType + 1, '列') }
       this.$apihttp({
-        url: '/accountsReceivable/selectBylist',
+        url: process.env.VUE_APP_MOCK_URL + '/accountsReceivable/selectBylist',
         method: 'post',
         data: param
       }).then((res) => {
@@ -505,7 +508,7 @@ export default {
       const self = this
       let param = { periodWid: self.dayByday('20201008'), orgId: self.orgKey(self.levelType + 1, '列'), type: self.levelType + 1, cityId: self.cityKey(self.levelType + 1, '列') }
       this.$apihttp({
-        url: '/accountsReceivable/structuralAnalysisList',
+        url: process.env.VUE_APP_MOCK_URL + '/accountsReceivable/structuralAnalysisList',
         method: 'post',
         data: param
       }).then((res) => {
@@ -556,7 +559,7 @@ export default {
       const self = this
       let param = { periodWid: self.dayByday('20201008'), orgId: self.orgKey(self.levelType + 1, '列'), type: self.levelType + 1, cityId: self.cityKey(self.levelType + 1, '列') }
       this.$apihttp({
-        url: '/accountsReceivable/structuralMortgage',
+        url: process.env.VUE_APP_MOCK_URL + '/accountsReceivable/structuralMortgage',
         method: 'post',
         data: param
       }).then((res) => {
@@ -600,7 +603,7 @@ export default {
       const self = this
       let param = { periodWid: self.dayByday('20200915'), orgId: self.orgKey(self.levelType, '单'), type: self.levelType, cityId: self.cityKey(self.levelType, '单') }
       this.$apihttp({
-        url: '/accountsReceivable/overdueProcessingTotal',
+        url: process.env.VUE_APP_MOCK_URL + '/accountsReceivable/overdueProcessingTotal',
         method: 'post',
         data: param
       }).then((res) => {
@@ -627,7 +630,7 @@ export default {
       const self = this
       let param = { periodWid: self.dayByday('20200918'), orgId: self.orgKey(self.levelType, '单'), type: self.levelType, cityId: self.cityKey(self.levelType, '单') }
       this.$apihttp({
-        url: '/accountsReceivable/overdueActualTime',
+        url: process.env.VUE_APP_MOCK_URL + '/accountsReceivable/overdueActualTime',
         method: 'post',
         data: param
       }).then((res) => {
@@ -654,7 +657,7 @@ export default {
       const self = this
       let param = { periodWid: self.dayByday('20200918'), orgId: self.orgKey(self.levelType + 1, '列'), type: self.levelType + 1, cityId: self.cityKey(self.levelType + 1, '列') }
       this.$apihttp({
-        url: '/accountsReceivable/overdueActualTime',
+        url: process.env.VUE_APP_MOCK_URL + '/accountsReceivable/overdueActualTime',
         method: 'post',
         data: param
       }).then((res) => {
@@ -685,7 +688,7 @@ export default {
       const self = this
       let param = { periodWid: self.dayByday('20200831'), orgId: self.orgKey(self.levelType, '单'), type: self.levelType, cityId: self.cityKey(self.levelType, '单') }
       this.$apihttp({
-        url: '/accountsReceivable/overdueMortgageTotal',
+        url: process.env.VUE_APP_MOCK_URL + '/accountsReceivable/overdueMortgageTotal',
         method: 'post',
         data: param
       }).then((res) => {
@@ -737,7 +740,7 @@ export default {
       const self = this
       let param = { periodWid: self.dayByday('20200831'), orgId: self.orgKey(self.levelType + 1, '列'), type: self.levelType + 1, cityId: self.cityKey(self.levelType + 1, '列') }
       this.$apihttp({
-        url: '/accountsReceivable/overdueMortgageTotal',
+        url: process.env.VUE_APP_MOCK_URL + '/accountsReceivable/overdueMortgageTotal',
         method: 'post',
         data: param
       }).then((res) => {
@@ -799,9 +802,6 @@ export default {
       this.date = val
       window.defaultDate = val
     }
-  },
-  components: {
-    headerBar
   }
 }
 </script>
