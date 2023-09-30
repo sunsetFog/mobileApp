@@ -143,7 +143,7 @@ import echartLineBar from './echartLineBar.js'
 import echartBarStack from './echartBarStack.js'
 import echartBar from './echartBar.js'
 import echartPie from './echartPie.js'
-import CloudEchart from '@/components/echarts/cloudEchart.vue'
+import CloudEchart from '@sky/pcDesign/components/echarts/cloudEchart.vue'
 export default {
   name: 'receivable',
   components: { headerBar, CloudEchart },
