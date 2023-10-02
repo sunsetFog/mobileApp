@@ -8,7 +8,7 @@ function recursion(arr) {
         let item = arr[i];
         item.text = item.title;
         item.key = lodash.uniqueId('menu-');
-        item.icon = require('@sky/static/picture/center/shouyi.png');
+        item.icon = require('@sky/static/picture/shouyi.png');
         recursion(item.children);
     }
 }
