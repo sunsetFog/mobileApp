@@ -10,7 +10,7 @@ import '@root/global.less';
 import '@root/global.scss';
 
 // rem
-import '@sky/static/capital/rem.js';
+import '@sky/utils/rem.js';
 
 // vant样式
 import 'vant/lib/index.css';

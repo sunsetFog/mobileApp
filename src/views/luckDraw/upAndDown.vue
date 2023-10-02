@@ -58,7 +58,7 @@ export default {
     .winning-list {
         width: 17.5rem;
         height: 9.375rem;
-        background-image: image-set(url("~@sky/static/reportForms/luckDraw/lottery_name_list.png") 1x, url("~@sky/static/reportForms/luckDraw/lottery_name_list@2x.png") 2x);
+        background-image: image-set(url("~./img/lottery_name_list.png") 1x, url("~./img/lottery_name_list@2x.png") 2x);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         padding: 0.8rem 1.25rem 0 1.25rem;

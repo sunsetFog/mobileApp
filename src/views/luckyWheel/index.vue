@@ -1,7 +1,7 @@
 <template>
     <section id="turntable">
         <template>
-        <img class="robot" src="@sky/static/reportForms/luckyWheel/robot.png" srcset="@sky/static/reportForms/luckyWheel/robot@2x.png 2x,@sky/static/reportForms/luckyWheel/robot@3x.png 3x"/>
+        <img class="robot" src="./img/robot.png" srcset="./img/robot@2x.png 2x,./img/robot@3x.png 3x"/>
         <div class="chat-box">
             <span v-if="luckyNum == 0 && isLogin == 'yes'">今日抽奖次数已用完，请明天再来吧~</span>
             <span v-if="luckyNum == 0 && isLogin == 'no'">你还未登录哟，请登录账户参与抽奖~</span>
@@ -23,7 +23,7 @@
             @end="endCallBack"
         >
         </LuckyWheel>
-        <img class="every-day" src="@sky/static/reportForms/luckyWheel/bg_words.png" srcset="@sky/static/reportForms/luckyWheel/bg_words@2x.png 2x,@sky/static/reportForms/luckyWheel/bg_words@3x.png 3x"/>
+        <img class="every-day" src="./img/bg_words.png" srcset="./img/bg_words@2x.png 2x,./img/bg_words@3x.png 3x"/>
         <div class="winning-record">
             <div class="header">
                 本活动彩金及实物奖品有效期为7天<br/>
@@ -38,10 +38,10 @@
                 </li>
                 </ul>
             </div>
-            <img v-if="winning_list.length == 0" class="pic-nohistory" src="@sky/static/reportForms/luckyWheel/pic_nohistory.png" srcset="@sky/static/reportForms/luckyWheel/pic_nohistory@2x.png 2x"/>
+            <img v-if="winning_list.length == 0" class="pic-nohistory" src="./img/pic_nohistory.png" srcset="./img/pic_nohistory@2x.png 2x"/>
 
         </div>
-        <img class="logo-bobo" src="@sky/static/reportForms/luckyWheel/logo_bobo.png" srcset="@sky/static/reportForms/luckyWheel/logo_bobo@2x.png 2x,@sky/static/reportForms/luckyWheel/logo_bobo@3x.png 3x"/>
+        <img class="logo-bobo" src="./img/logo_bobo.png" srcset="./img/logo_bobo@2x.png 2x,./img/logo_bobo@3x.png 3x"/>
 
 
         </template>
@@ -50,7 +50,7 @@
 
         <van-dialog v-model="dialog_value"  width="21.56rem">
           <div slot="default" class="prize-box" v-if="!rule_active&&dialog_value">
-            <img class="dialog-envelopes" src="@sky/static/reportForms/luckyWheel/bump_bg.png" srcset="@sky/static/reportForms/luckyWheel/bump_bg@2x.png 2x">
+            <img class="dialog-envelopes" src="./img/bump_bg.png" srcset="./img/bump_bg@2x.png 2x">
             <div class="thank-you" v-if="prize_type == 520">今日抽奖次数已用完，请明日再来哟~</div>
             <div class="thank-you" v-if="prize_type == 404">你还未登录，快去登录来抽奖吧~</div>
             <div class="thank-you" v-if="prize_type == 500">当前啵币余额不足，不可抽奖哦~</div>
@@ -60,7 +60,7 @@
             <div class="thank-you" v-if="prize_type == 2 || prize_type == 5 || prize_type == 8 || prize_type == 11">截图此页面联系客服领取平台彩金</div>
             <div class="thank-you" v-if="prize_type == 0 || prize_type == 3 || prize_type == 6 || prize_type == 9">啵币奖励已自动发放到啵币账户</div>
 
-            <img class="dialog-cancel" @click="cancelPrize" src="@sky/static/reportForms/luckyWheel/icon_off.png" srcset="@sky/static/reportForms/luckyWheel/icon_off@2x.png 2x">
+            <img class="dialog-cancel" @click="cancelPrize" src="./img/icon_off.png" srcset="./img/icon_off@2x.png 2x">
           </div>
 
           <div slot="default" class="rule-box" v-if="rule_active&&dialog_value">
@@ -95,7 +95,7 @@ export default {
                 {
                     padding: '1.44rem',
                     imgs: [{
-                        src: require('@sky/static/reportForms/luckyWheel/wheel_bg@3x.png'),
+                        src: require('./img/wheel_bg@3x.png'),
                         width: '94.8%',
                         height: '97.8%',
                         rotate: false
@@ -104,7 +104,7 @@ export default {
                 {
                     padding: '3.75rem',
                     imgs: [{
-                        src: require('@sky/static/reportForms/luckyWheel/wheel@2x.png'),
+                        src: require('./img/wheel@2x.png'),
                         width: '100%',
                         height: '100%',
                         rotate: true
@@ -189,8 +189,8 @@ export default {
                 {
                     radius: '50%',
                     imgs: [{
-                        // src: '~@sky/static/reportForms/luckyWheel/button@2x.png',
-                        src: require('@sky/static/reportForms/luckyWheel/button@2x.png'),
+                        // src: '~./img/button@2x.png',
+                        src: require('./img/button@2x.png'),
                         width: '100%',
                         top: '-130%'
                     }]
@@ -387,7 +387,7 @@ export default {
     height: 71.5625rem;
     padding: 0 0.9375rem;
     box-sizing: border-box;
-    background-image: image-set(url("~@sky/static/reportForms/luckyWheel/bg.png") 1x, url("~@sky/static/reportForms/luckyWheel/bg@2x.png") 2x);
+    background-image: image-set(url("~./img/bg.png") 1x, url("~./img/bg@2x.png") 2x);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: relative;
@@ -406,7 +406,7 @@ export default {
         position: absolute;
         right: 6.875rem;
         top: 16.5625rem;
-        background-image: image-set(url("~@sky/static/reportForms/luckyWheel/chat_box.png") 1x, url("~@sky/static/reportForms/luckyWheel/chat_box@2x.png") 2x, url("~@sky/static/reportForms/luckyWheel/chat_box@3x.png") 3x);
+        background-image: image-set(url("~./img/chat_box.png") 1x, url("~./img/chat_box@2x.png") 2x, url("~./img/chat_box@3x.png") 3x);
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
@@ -464,7 +464,7 @@ export default {
             font-size: 0.875rem;
             padding: 0.375rem 0 0 0;
             box-sizing: border-box;
-            background-image: image-set(url("~@sky/static/reportForms/luckyWheel/title_box.png") 1x, url("~@sky/static/reportForms/luckyWheel/title_box@2x.png") 2x, url("~@sky/static/reportForms/luckyWheel/title_box@3x.png") 3x);
+            background-image: image-set(url("~./img/title_box.png") 1x, url("~./img/title_box@2x.png") 2x, url("~./img/title_box@3x.png") 3x);
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }

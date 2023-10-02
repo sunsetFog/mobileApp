@@ -2,13 +2,13 @@
 <section id="home">
     <header-bar title="启明星经营看板"></header-bar>
     <section class="pen-special">
-        <div class="banner"><img src="@sky/static/reportForms/image/banner3@2x.png"></div>
+        <div class="banner"><img src="@/views/home/img/banner3@2x.png"></div>
         <div class="modularization" v-for="(value,sign) in menu_list" :key="sign">
             <label>{{value.type}}</label>
             <div class="modular">
             <div class="modular-cell" v-for="(item,index) in value.children" :key="index">
                 <ul>
-                <li><img :src="require('@sky/static/reportForms/image/'+item.icon)" @click="go(item)"></li>
+                <li><img :src="require('@/views/home/img/'+item.icon)" @click="go(item)"></li>
                 <li><span @click="go(item)">{{item.name}}</span></li>
                 </ul>
             </div>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import headerBar from '../components/headerBar.vue'
+import headerBar from '@/components/headerBar.vue'
 export default {
     name: "home",
     data() {

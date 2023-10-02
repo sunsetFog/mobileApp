@@ -25,7 +25,7 @@
                     <div class="title-type1">
                         <label>主播</label>
                         <div>
-                            <img src="@sky/static/reportForms/reward/3/icon_more.png"/>
+                            <img src="./img/icon_more.png"/>
                         </div>
                     </div>
                     <div class="users_box">
@@ -36,13 +36,13 @@
                             </li>
                         </ul>
                         <div v-else class="no-data">
-                            <img src="@sky/static/reportForms/reward/3/pic_nohistory.png"/>
+                            <img src="./img/pic_nohistory.png"/>
                         </div>
                     </div>
                     <div class="title-type1">
                         <label>相关直播</label>
                         <div>
-                            <img src="@sky/static/reportForms/reward/3/icon_more.png"/>
+                            <img src="./img/icon_more.png"/>
                         </div>
                     </div>
                     <div class="rooms_box">
@@ -52,11 +52,11 @@
                                 <p>{{item.anchorName}}</p>
                                 <img class="competition-icon" :src="item.roomCover"/>
                                 <span>{{item.roomName}}</span>
-                                <img class="guan-zhu" src="@sky/static/reportForms/reward/3/icon_scan.png"/>
+                                <img class="guan-zhu" src="./img/icon_scan.png"/>
                             </li>
                         </ul>
                         <div v-else class="no-data">
-                            <img src="@sky/static/reportForms/reward/3/pic_nohistory.png"/>
+                            <img src="./img/pic_nohistory.png"/>
                         </div>
                     </div>
                 </section>
@@ -71,7 +71,7 @@
                             </li>
                         </ul>
                         <div v-else class="no-data">
-                            <img src="@sky/static/reportForms/reward/3/pic_nohistory.png"/>
+                            <img src="./img/pic_nohistory.png"/>
                         </div>
                     </div>
                 </section>
@@ -85,11 +85,11 @@
                                 <p>{{item.anchorName}}</p>
                                 <img class="competition-icon" :src="item.roomCover"/>
                                 <span>{{item.roomName}}</span>
-                                <img class="guan-zhu" src="@sky/static/reportForms/reward/3/icon_scan.png"/>
+                                <img class="guan-zhu" src="./img/icon_scan.png"/>
                             </li>
                         </ul>
                         <div v-else class="no-data">
-                            <img src="@sky/static/reportForms/reward/3/pic_nohistory.png"/>
+                            <img src="./img/pic_nohistory.png"/>
                         </div>
                     </div>
                 </section>

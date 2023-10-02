@@ -8,7 +8,7 @@
         </span>
       <div class="open-menu" @click="cityEvent">
         切换项目
-        <img src="@sky/static/reportForms/image/menu.png">
+        <img src="@/views/home/img/menu.png">
       </div>
     </div>
     <div class="pen-content">

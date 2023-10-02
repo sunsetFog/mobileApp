@@ -2,14 +2,14 @@
   <section id="luckDraw">
     <img
       class="words"
-      src="@sky/static/reportForms/luckDraw/words.png"
-      srcset="@sky/static/reportForms/luckDraw/words@2x.png 2x"
+      src="./img/words.png"
+      srcset="./img/words@2x.png 2x"
       alt
     >
     <img
       class="rabbit-icon"
-      src="@sky/static/reportForms/luckDraw/tworabbit.png"
-      srcset="@sky/static/reportForms/luckDraw/tworabbit@2x.png 2x"
+      src="./img/tworabbit.png"
+      srcset="./img/tworabbit@2x.png 2x"
       alt
     >
     <LuckyGrid
@@ -37,8 +37,8 @@
       <div slot="default">
         <img
           class="dialog-envelopes"
-          src="@sky/static/reportForms/luckDraw/red_bag_pic.png"
-          srcset="@sky/static/reportForms/luckDraw/red_bag_pic@2x.png 2x"
+          src="./img/red_bag_pic.png"
+          srcset="./img/red_bag_pic@2x.png 2x"
           alt
         >
         <div v-if="prize_type == 4" class="missed-text">
@@ -69,8 +69,8 @@
         <img
           class="dialog-cancel"
           @click="cancelPrize"
-          src="@sky/static/reportForms/luckDraw/icon_off.png"
-          srcset="@sky/static/reportForms/luckDraw/icon_off@2x.png 2x"
+          src="./img/icon_off.png"
+          srcset="./img/icon_off@2x.png 2x"
           alt
         >
       </div>
@@ -127,7 +127,7 @@ export default {
         // shadow: '0 5 1 #ebf1f4'
       },
       activeStyle: {
-        // background: 'url(@sky/static/reportForms/luckDraw/choujiang_button_on.png)',
+        // background: 'url(./img/choujiang_button_on.png)',
         background: "linear-gradient(270deg, #FB0F0F, #FA9E9E)",
         fontColor: "#E61F49",
         fontSize: this.conversion(1.3) + "px",
@@ -153,7 +153,7 @@ export default {
               // ],
               imgs: [
                 {
-                  src: require("@sky/static/reportForms/luckDraw/lijichoujiang_banned.png"),
+                  src: require("./img/lijichoujiang_banned.png"),
                   width: "100%",
                   height: "100%",
                   top: "0%"
@@ -167,7 +167,7 @@ export default {
               y: 1,
               imgs: [
                 {
-                  src: require("@sky/static/reportForms/luckDraw/choujiang_button_on.png"),
+                  src: require("./img/choujiang_button_on.png"),
                   width: "100%",
                   height: "100%",
                   top: "0%"
@@ -236,7 +236,7 @@ export default {
             imgs_width: "100%",
             imgs_height: "100%",
             imgs_top: "0%",
-            img: require("@sky/static/reportForms/luckDraw/phone.png")
+            img: require("./img/phone.png")
           },
           {
             name: "300",
@@ -244,7 +244,7 @@ export default {
             imgs_width: "100%",
             imgs_height: "100%",
             imgs_top: "0%",
-            img: require("@sky/static/reportForms/luckDraw/jifen_button.png")
+            img: require("./img/jifen_button.png")
           },
           {
             name: "",
@@ -252,7 +252,7 @@ export default {
             imgs_width: "100%",
             imgs_height: "100%",
             imgs_top: "0%",
-            img: require("@sky/static/reportForms/luckDraw/pingtai.png")
+            img: require("./img/pingtai.png")
           },
           {
             name: "100",
@@ -260,7 +260,7 @@ export default {
             imgs_width: "100%",
             imgs_height: "100%",
             imgs_top: "0%",
-            img: require("@sky/static/reportForms/luckDraw/jifen_button.png")
+            img: require("./img/jifen_button.png")
           },
           {
             name: "",
@@ -268,7 +268,7 @@ export default {
             imgs_width: "70%",
             imgs_height: "70%",
             imgs_top: "14.5%",
-            img: require("@sky/static/reportForms/luckDraw/thanks_join.png")
+            img: require("./img/thanks_join.png")
           },
           {
             name: "200",
@@ -276,7 +276,7 @@ export default {
             imgs_width: "100%",
             imgs_height: "100%",
             imgs_top: "0%",
-            img: require("@sky/static/reportForms/luckDraw/jifen_button.png")
+            img: require("./img/jifen_button.png")
           },
           {
             name: "",
@@ -284,7 +284,7 @@ export default {
             imgs_width: "100%",
             imgs_height: "100%",
             imgs_top: "0%",
-            img: require("@sky/static/reportForms/luckDraw/once_again.png")
+            img: require("./img/once_again.png")
           },
           {
             name: "50",
@@ -292,7 +292,7 @@ export default {
             imgs_width: "100%",
             imgs_height: "100%",
             imgs_top: "0%",
-            img: require("@sky/static/reportForms/luckDraw/jifen_button.png")
+            img: require("./img/jifen_button.png")
           }
         ];
         const prizes = [];
@@ -382,10 +382,10 @@ export default {
 #luckDraw {
   width: 100%;
   height: 59.56rem;
-  -background: url("~@sky/static/reportForms/luckDraw/choujiang_bg.png");
+  -background: url("~./img/choujiang_bg.png");
   background-image: image-set(
-    url("~@sky/static/reportForms/luckDraw/choujiang_bg.png") 1x,
-    url("~@sky/static/reportForms/luckDraw/choujiang_bg@2x.png") 2x
+    url("~./img/choujiang_bg.png") 1x,
+    url("~./img/choujiang_bg@2x.png") 2x
   );
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -498,8 +498,8 @@ export default {
     width: 15rem;
     height: 3.75rem;
     background-image: image-set(
-      url("~@sky/static/reportForms/luckDraw/chance_times.png") 1x,
-      url("~@sky/static/reportForms/luckDraw/chance_times@2x.png") 2x
+      url("~./img/chance_times.png") 1x,
+      url("~./img/chance_times@2x.png") 2x
     );
     background-repeat: no-repeat;
     background-size: 100% 100%;

@@ -72,7 +72,7 @@
             </ul>
             <div class="no-data" v-if="have_to_list.length == 0">
                 <div>
-                    <img v-if="have_to_list.length == 0" src="@sky/static/reportForms/reward/1/pic_nodata.png" />
+                    <img v-if="have_to_list.length == 0" src="./img2/1/pic_nodata.png" />
                 </div>
                 <p>暂无数据</p>
             </div>
@@ -112,14 +112,14 @@
         </van-dialog>
 
         <van-dialog v-model="jiang_box" width="17.18rem" class="zhong-jiang">
-            <img class="ki-close" src="@sky/static/reportForms/reward/1/win_close.png" @click="jiang_box = false" />
+            <img class="ki-close" src="./img2/1/win_close.png" @click="jiang_box = false" />
             <div class="ki-title">
-                <img v-if="luckyNum != 0" src="@sky/static/reportForms/reward/1/gongxizhongjiang.png" />
-                <img v-else src="@sky/static/reportForms/reward/1/meiyou.png" />
+                <img v-if="luckyNum != 0" src="./img2/1/gongxizhongjiang.png" />
+                <img v-else src="./img2/1/meiyou.png" />
             </div>
 
             <img v-if="luckyNum != 0" class="ki-content" :src="awardImgUrl" />
-            <img v-if="luckyNum == 0" class="ki-content" src="@sky/static/reportForms/reward/1/pic_notmes.png" />
+            <img v-if="luckyNum == 0" class="ki-content" src="./img2/1/pic_notmes.png" />
             <p v-if="luckyNum != 0 && (awardName500 != '500鲨豆' && awardName500 != '100鲨豆')">有效期至：{{ pastTime }}</p>
             <p v-if="luckyNum != 0 && (awardName500 == '500鲨豆' || awardName500 == '100鲨豆')">已发放至您的鲨豆账号</p>
             <p v-if="luckyNum == 0">试试点击赚取次数完成任务赢得抽奖机会</p>
@@ -224,7 +224,7 @@ export default {
                     { text: `(剩余${this.luckyNum}次)`, fontColor: '#fff', top: '65%', fontSize: '15px' }
                 ],
                 imgs: [
-                    { src: require('@sky/static/reportForms/reward/box_yellow.png'), width: '100%', height: '100%', top: '0%' }
+                    { src: require('./img2/box_yellow.png'), width: '100%', height: '100%', top: '0%' }
                 ]
             }] : [{
                 x: 1,
@@ -235,7 +235,7 @@ export default {
                     { text: `(剩余${this.luckyNum}次)`, fontColor: '#fff', top: '65%', fontSize: '15px' }
                 ],
                 imgs: [
-                    { src: require('@sky/static/reportForms/reward/box_choujiang.png'), width: '100%', height: '100%', top: '0%' }
+                    { src: require('./img2/box_choujiang.png'), width: '100%', height: '100%', top: '0%' }
                 ]
             }]
         }
@@ -303,14 +303,14 @@ export default {
             // that.$axios('post', '/second/userDrawTaskRecord/list', params)
             // .then((res) => {
             let res = { "code": 200, "msg": null, "data": { "total": 8, "list": [
-                { "id": 367, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 1, "awardName": "干杯价值1元", "awardImgUrl": require("@sky/static/reportForms/reward/gift_juesha.png"), "status": 5, "createTime": "2022-03-06 18:41:51", "updateTime": "2022-03-21 08:00:01", "deleted": 0, "amount": 1, "sendTime": null, "pastTime": "2022-03-21 08:00:00", "awardType": 4, "commentDesc": "抽奖获取礼物", "bqType": 130, "bqPrice": null, "phone": "19805060001", "userName": "109" },
-                { "id": 325, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 2, "awardName": "现金红包：666元", "awardImgUrl": require("@sky/static/reportForms/reward/gift_cheers.png"), "status": 3, "createTime": "2022-03-02 18:31:20", "updateTime": "2022-03-02 18:31:20", "deleted": 0, "amount": 1, "sendTime": null, "pastTime": "2022-04-01 08:00:00", "awardType": 1, "commentDesc": "联系平台客服，提供地址为您发货", "bqType": 0, "bqPrice": null, "phone": "19805060001", "userName": "109" },
-                { "id": 318, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 2, "awardName": "iphone13ProMax 256g 黑色", "awardImgUrl": require("@sky/static/reportForms/reward/gift_shadou_100.png"), "status": 3, "createTime": "2022-03-02 18:24:16", "updateTime": "2022-03-02 18:24:16", "deleted": 0, "amount": 1, "sendTime": null, "pastTime": "2022-04-01 08:00:00", "awardType": 2, "commentDesc": "联系平台客服，提供地址为您发货", "bqType": 0, "bqPrice": null, "phone": "19805060001", "userName": "109" },
-                { "id": 317, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 2, "awardName": "iphone13ProMax 256g 黑色", "awardImgUrl": require("@sky/static/reportForms/reward/gift_shadou_100.png"), "status": 3, "createTime": "2022-03-02 18:23:16", "updateTime": "2022-03-02 18:23:16", "deleted": 0, "amount": 1, "sendTime": null, "pastTime": "2022-04-01 08:00:00", "awardType": 2, "commentDesc": "联系平台客服，提供地址为您发货", "bqType": 0, "bqPrice": null, "phone": "19805060001", "userName": "109" },
-                { "id": 238, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 2, "awardName": "现金红包：666元", "awardImgUrl": require("@sky/static/reportForms/reward/gift_cheers.png"), "status": 4, "createTime": "2022-03-01 12:15:32", "updateTime": "2022-03-01 12:15:32", "deleted": 0, "amount": 1, "sendTime": null, "pastTime": "2022-03-31 08:00:00", "awardType": 1, "commentDesc": "联系平台客服，提供地址为您发货", "bqType": 0, "bqPrice": null, "phone": "19805060001", "userName": "109" },
-                { "id": 237, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 2, "awardName": "现金红包：666元", "awardImgUrl": require("@sky/static/reportForms/reward/gift_cheers.png"), "status": 4, "createTime": "2022-03-01 12:02:09", "updateTime": "2022-03-01 12:02:09", "deleted": 0, "amount": 1, "sendTime": null, "pastTime": "2022-03-31 08:00:00", "awardType": 1, "commentDesc": "联系平台客服，提供地址为您发货", "bqType": 0, "bqPrice": null, "phone": "19805060001", "userName": "109" },
-                { "id": 236, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 1, "awardName": "绝杀价值6元", "awardImgUrl": require("@sky/static/reportForms/reward/gift_redbag888.png"), "status": 2, "createTime": "2022-03-01 09:53:07", "updateTime": "2022-03-01 09:53:07", "deleted": 0, "amount": 1, "sendTime": "2022-03-01 17:25:39", "pastTime": "2022-03-16 08:00:00", "awardType": 4, "commentDesc": "赠送给:卫星602931", "bqType": 131, "bqPrice": null, "phone": "19805060001", "userName": "109" },
-                { "id": 232, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 2, "awardName": "iphone13ProMax 256g 黑色", "awardImgUrl": require("@sky/static/reportForms/reward/gift_shadou_100.png"), "status": 5, "createTime": "2022-03-01 00:36:37", "updateTime": "2022-03-30 08:00:01", "deleted": 0, "amount": 1, "sendTime": null, "pastTime": "2022-03-30 08:00:00", "awardType": 2, "commentDesc": "联系平台客服，提供地址为您发货", "bqType": 0, "bqPrice": null, "phone": "19805060001", "userName": "109" }], "pageNum": 1, "pageSize": 10, "size": 8, "startRow": 1, "endRow": 8, "pages": 1, "prePage": 0, "nextPage": 0, "isFirstPage": true, "isLastPage": true, "hasPreviousPage": false, "hasNextPage": false, "navigatePages": 8, "navigatepageNums": [1], "navigateFirstPage": 1, "navigateLastPage": 1, "firstPage": 1, "lastPage": 1 } }
+                { "id": 367, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 1, "awardName": "干杯价值1元", "awardImgUrl": require("./img2/gift_juesha.png"), "status": 5, "createTime": "2022-03-06 18:41:51", "updateTime": "2022-03-21 08:00:01", "deleted": 0, "amount": 1, "sendTime": null, "pastTime": "2022-03-21 08:00:00", "awardType": 4, "commentDesc": "抽奖获取礼物", "bqType": 130, "bqPrice": null, "phone": "19805060001", "userName": "109" },
+                { "id": 325, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 2, "awardName": "现金红包：666元", "awardImgUrl": require("./img2/gift_cheers.png"), "status": 3, "createTime": "2022-03-02 18:31:20", "updateTime": "2022-03-02 18:31:20", "deleted": 0, "amount": 1, "sendTime": null, "pastTime": "2022-04-01 08:00:00", "awardType": 1, "commentDesc": "联系平台客服，提供地址为您发货", "bqType": 0, "bqPrice": null, "phone": "19805060001", "userName": "109" },
+                { "id": 318, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 2, "awardName": "iphone13ProMax 256g 黑色", "awardImgUrl": require("./img2/gift_shadou_100.png"), "status": 3, "createTime": "2022-03-02 18:24:16", "updateTime": "2022-03-02 18:24:16", "deleted": 0, "amount": 1, "sendTime": null, "pastTime": "2022-04-01 08:00:00", "awardType": 2, "commentDesc": "联系平台客服，提供地址为您发货", "bqType": 0, "bqPrice": null, "phone": "19805060001", "userName": "109" },
+                { "id": 317, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 2, "awardName": "iphone13ProMax 256g 黑色", "awardImgUrl": require("./img2/gift_shadou_100.png"), "status": 3, "createTime": "2022-03-02 18:23:16", "updateTime": "2022-03-02 18:23:16", "deleted": 0, "amount": 1, "sendTime": null, "pastTime": "2022-04-01 08:00:00", "awardType": 2, "commentDesc": "联系平台客服，提供地址为您发货", "bqType": 0, "bqPrice": null, "phone": "19805060001", "userName": "109" },
+                { "id": 238, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 2, "awardName": "现金红包：666元", "awardImgUrl": require("./img2/gift_cheers.png"), "status": 4, "createTime": "2022-03-01 12:15:32", "updateTime": "2022-03-01 12:15:32", "deleted": 0, "amount": 1, "sendTime": null, "pastTime": "2022-03-31 08:00:00", "awardType": 1, "commentDesc": "联系平台客服，提供地址为您发货", "bqType": 0, "bqPrice": null, "phone": "19805060001", "userName": "109" },
+                { "id": 237, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 2, "awardName": "现金红包：666元", "awardImgUrl": require("./img2/gift_cheers.png"), "status": 4, "createTime": "2022-03-01 12:02:09", "updateTime": "2022-03-01 12:02:09", "deleted": 0, "amount": 1, "sendTime": null, "pastTime": "2022-03-31 08:00:00", "awardType": 1, "commentDesc": "联系平台客服，提供地址为您发货", "bqType": 0, "bqPrice": null, "phone": "19805060001", "userName": "109" },
+                { "id": 236, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 1, "awardName": "绝杀价值6元", "awardImgUrl": require("./img2/gift_redbag888.png"), "status": 2, "createTime": "2022-03-01 09:53:07", "updateTime": "2022-03-01 09:53:07", "deleted": 0, "amount": 1, "sendTime": "2022-03-01 17:25:39", "pastTime": "2022-03-16 08:00:00", "awardType": 4, "commentDesc": "赠送给:卫星602931", "bqType": 131, "bqPrice": null, "phone": "19805060001", "userName": "109" },
+                { "id": 232, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 2, "awardName": "iphone13ProMax 256g 黑色", "awardImgUrl": require("./img2/gift_shadou_100.png"), "status": 5, "createTime": "2022-03-01 00:36:37", "updateTime": "2022-03-30 08:00:01", "deleted": 0, "amount": 1, "sendTime": null, "pastTime": "2022-03-30 08:00:00", "awardType": 2, "commentDesc": "联系平台客服，提供地址为您发货", "bqType": 0, "bqPrice": null, "phone": "19805060001", "userName": "109" }], "pageNum": 1, "pageSize": 10, "size": 8, "startRow": 1, "endRow": 8, "pages": 1, "prePage": 0, "nextPage": 0, "isFirstPage": true, "isLastPage": true, "hasPreviousPage": false, "hasNextPage": false, "navigatePages": 8, "navigatepageNums": [1], "navigateFirstPage": 1, "navigateLastPage": 1, "firstPage": 1, "lastPage": 1 } }
             console.log('---我的奖励---', res)
             if (res.code == 200) {
                 that.loading = false
@@ -407,7 +407,7 @@ export default {
                 that.earn_list = res.data
                 for (let i = 0; i < that.earn_list.length; i++) {
                     let item = that.earn_list[i]
-                    that.earn_list[i].url = require('@sky/static/reportForms/reward/1/bean' + i + '.png')
+                    that.earn_list[i].url = require('./img2/1/bean' + i + '.png')
                     that.earn_list[i].active = false
                     if (item.finishNum == item.taskCondNum) {
                         that.earn_list[i].active = true
@@ -426,14 +426,14 @@ export default {
             // .then((res) => {
 
             let res = { "code": 200, "msg": null, "data": [
-                { "id": 4, "awardType": null, "bqType": null, "sort": 1, "imgUrl": require("@sky/static/reportForms/reward/gift_shadou_100.png"), "awardName": "iphone13ProMax 256g 黑色", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null },
-                { "id": 2, "awardType": null, "bqType": null, "sort": 2, "imgUrl": require("@sky/static/reportForms/reward/gift_phone13.png"), "awardName": "现金红包：888元", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null },
-                { "id": 1, "awardType": null, "bqType": null, "sort": 3, "imgUrl": require("@sky/static/reportForms/reward/gift_cheers.png"), "awardName": "现金红包：666元", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null },
-                { "id": 3, "awardType": null, "bqType": null, "sort": 4, "imgUrl": require("@sky/static/reportForms/reward/gift_cloths.png"), "awardName": "白鲨直播专属卫衣", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null },
-                { "id": 6, "awardType": null, "bqType": null, "sort": 5, "imgUrl": require("@sky/static/reportForms/reward/gift_shadou_500.png"), "awardName": "500鲨豆", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null },
-                { "id": 5, "awardType": null, "bqType": null, "sort": 6, "imgUrl": require("@sky/static/reportForms/reward/gift_redbag666.png"), "awardName": "100鲨豆", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null },
-                { "id": 7, "awardType": null, "bqType": null, "sort": 7, "imgUrl": require("@sky/static/reportForms/reward/gift_juesha.png"), "awardName": "干杯价值1元", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null },
-                { "id": 8, "awardType": null, "bqType": null, "sort": 8, "imgUrl": require("@sky/static/reportForms/reward/gift_redbag888.png"), "awardName": "绝杀价值6元", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null }] }
+                { "id": 4, "awardType": null, "bqType": null, "sort": 1, "imgUrl": require("./img2/gift_shadou_100.png"), "awardName": "iphone13ProMax 256g 黑色", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null },
+                { "id": 2, "awardType": null, "bqType": null, "sort": 2, "imgUrl": require("./img2/gift_phone13.png"), "awardName": "现金红包：888元", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null },
+                { "id": 1, "awardType": null, "bqType": null, "sort": 3, "imgUrl": require("./img2/gift_cheers.png"), "awardName": "现金红包：666元", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null },
+                { "id": 3, "awardType": null, "bqType": null, "sort": 4, "imgUrl": require("./img2/gift_cloths.png"), "awardName": "白鲨直播专属卫衣", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null },
+                { "id": 6, "awardType": null, "bqType": null, "sort": 5, "imgUrl": require("./img2/gift_shadou_500.png"), "awardName": "500鲨豆", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null },
+                { "id": 5, "awardType": null, "bqType": null, "sort": 6, "imgUrl": require("./img2/gift_redbag666.png"), "awardName": "100鲨豆", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null },
+                { "id": 7, "awardType": null, "bqType": null, "sort": 7, "imgUrl": require("./img2/gift_juesha.png"), "awardName": "干杯价值1元", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null },
+                { "id": 8, "awardType": null, "bqType": null, "sort": 8, "imgUrl": require("./img2/gift_redbag888.png"), "awardName": "绝杀价值6元", "amount": null, "createTime": null, "updateTime": null, "deleted": null, "proba": null }] }
             console.log('---奖品列表---', res)
             if (res.code == 200) {
                 that.prizes = []
@@ -504,7 +504,7 @@ export default {
             // }
             // that.$axios('post', '/second/userDrawTaskRecord/draw', params)
             // .then((res) => {
-            let res = { "code": 200, "msg": null, "data": { "id": 383, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 2, "awardName": "白鲨直播专属卫衣", "awardImgUrl": require("@sky/static/reportForms/reward/gift_cloths.png"), "status": 3, "createTime": null, "updateTime": null, "deleted": null, "amount": 1, "sendTime": null, "pastTime": "2022-04-30 08:00:00", "awardType": 2, "commentDesc": "联系平台客服，提供地址为您发货", "bqType": 0, "bqPrice": null, "phone": null, "userName": null } }
+            let res = { "code": 200, "msg": null, "data": { "id": 383, "userId": "0a55078dc2ba4f3cac10537da9dbec94", "virvalType": 2, "awardName": "白鲨直播专属卫衣", "awardImgUrl": require("./img2/gift_cloths.png"), "status": 3, "createTime": null, "updateTime": null, "deleted": null, "amount": 1, "sendTime": null, "pastTime": "2022-04-30 08:00:00", "awardType": 2, "commentDesc": "联系平台客服，提供地址为您发货", "bqType": 0, "bqPrice": null, "phone": null, "userName": null } }
             console.log('---开始抽奖---', res)
             if (res.code == 200) {
                 setTimeout(() => {
@@ -540,8 +540,8 @@ export default {
 #luckyDraw {
     width: 100%;
     height: 55.5625rem;
-    -background: url('~@sky/static/reportForms/reward/bg.png');
-    background-image: image-set(url("~@sky/static/reportForms/reward/bg.png") 1x, url("~@sky/static/reportForms/reward/bg@2x.png") 2x);
+    -background: url('~./img2/bg.png');
+    background-image: image-set(url("~./img2/bg.png") 1x, url("~./img2/bg@2x.png") 2x);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: relative;
@@ -559,7 +559,7 @@ export default {
         font-size: 0.8125rem;
         padding: 0.1875rem 0 0 0.4375rem;
         box-sizing: border-box;
-        background-image: image-set(url("~@sky/static/reportForms/reward/button_rule.png") 1x, url("~@sky/static/reportForms/reward/button_rule@2x.png") 2x);
+        background-image: image-set(url("~./img2/button_rule.png") 1x, url("~./img2/button_rule@2x.png") 2x);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         position: absolute;
@@ -572,7 +572,7 @@ export default {
         height: 1.75rem;
         color: #D7AA8B;
         font-size: 0.8125rem;
-        background-image: image-set(url("~@sky/static/reportForms/reward/winnews_bar.png") 1x, url("~@sky/static/reportForms/reward/winnews_bar@2x.png") 2x);
+        background-image: image-set(url("~./img2/winnews_bar.png") 1x, url("~./img2/winnews_bar@2x.png") 2x);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         position: absolute;
@@ -592,7 +592,7 @@ export default {
         text-align: center;
         line-height: 2.5rem;
         color: #FAE9D0;
-        background-image: image-set(url("~@sky/static/reportForms/reward/button_red.png") 1x, url("~@sky/static/reportForms/reward/button_red@2x.png") 2x);
+        background-image: image-set(url("~./img2/button_red.png") 1x, url("~./img2/button_red@2x.png") 2x);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         position: absolute;
