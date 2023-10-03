@@ -49,6 +49,7 @@ function luyou(arr) {
                 redirect: item.children[0].path
             })
         }
+        // children数组进入循环
         luyou(item.children);
     }
 }
