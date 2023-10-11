@@ -1,3 +1,5 @@
+// @ts-nocheck
+'use sloppy'
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import FirstRouter from './modules/firstRouter.js';
 
@@ -27,7 +29,6 @@ const router = createRouter({
 // 路由拦截
 router.beforeEach((to, from, next) => {
     if (from.path == '/' && to.path != '/login') {
-        // @ts-ignore
         // if (VueCookies.get(process.env.VUE_APP_TOKEN_KEY)) {
         //     store.dispatch('routerApple').then(function (value) {
         //         for (let i = 0; i < value.length; i++) {
