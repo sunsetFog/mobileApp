@@ -4,14 +4,13 @@
     https://github.com/michael-ciniawsky/postcss-load-config
 */
 module.exports = {
-    plugins: {
+    plugins: process.env.VUE_APP_ADAPTER == 'rem' ? {
         'postcss-import': {},
         'postcss-url': {},
         'postcss-pxtorem': {
             rootValue: 16,
             propList: ['*'],
         },
-        // to edit target browsers: use "browserslist" field in package.json
         autoprefixer: {},
-    },
+    } : {}
 };
