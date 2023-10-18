@@ -1,9 +1,11 @@
 <template>
     <section id="noticeBar">
         <van-notice-bar :scrollable="false">
-            <div slot="left-icon" class="venus">
-                <img class="u76" src="@sky/static/mall/homePage/u76.png"/>
-            </div>
+            <template #left-icon>
+                <div class="venus">
+                    <img class="u76" src="@sky/static/mall/homePage/u76.png"/>
+                </div>
+            </template>
             <van-swipe
                 vertical
                 class="notice-swipe"

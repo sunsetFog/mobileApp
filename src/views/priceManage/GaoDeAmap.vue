@@ -3,10 +3,14 @@
     <div class="navigation-bar">
       <div class="search-box">
         <van-search v-model="search_value" placeholder="请输入项目名称" maxlength="25" @search="vagueQuery" @input="inputEvent" @focus="focusEvent" @blur="blurEvent" @clear="clearEvent" left-icon="van-icon van-icon-search" show-action background="#062E41">
-            <div slot="action" @click="vagueQuery" class="right-action">搜索</div>
-            <div slot="left" @click="wherePlace"  class="where-place">
-              <i class="el-icon-location"></i>{{where_place}}
-            </div>
+            <template #action>
+                <div @click="vagueQuery" class="right-action">搜索</div>
+            </template>
+            <template #left>
+                <div @click="wherePlace"  class="where-place">
+                    <i class="el-icon-location"></i>{{where_place}}
+                </div>
+            </template>
         </van-search>
       </div>
       <div class="search-tips" v-show="tip_active">
