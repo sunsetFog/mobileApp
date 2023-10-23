@@ -8,7 +8,8 @@
             </template>
             <template #left>
                 <div @click="wherePlace"  class="where-place">
-                    <i class="el-icon-location"></i>{{where_place}}
+                    <van-icon name="location-o" />
+                    {{where_place}}
                 </div>
             </template>
         </van-search>
@@ -29,8 +30,8 @@
           <span class="compare-month">比上月</span>
           <div class="percentage-i">
             <span>{{item.mom_rate}}%</span>
-            <i class="el-icon-caret-top" style="color: #D0021B;" v-if="item.mom_rate>=0"></i>
-            <i class="el-icon-caret-bottom" style="color: #6BCB04;" v-else></i>
+            <van-icon name="arrow-up" style="color: #D0021B;" v-if="item.mom_rate>=0" />
+            <van-icon name="arrow-down" style="color: #6BCB04;" v-else/>
           </div>
         </div>
       </el-amap-marker>

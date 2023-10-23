@@ -25,13 +25,13 @@
             <span v-else>暂无</span>
           </div>
           <div class="grid-cell">
-            <i class="el-icon-caret-top" style="color: #D0021B;" v-if="material_list.mom_rate>=0"></i>
-            <i class="el-icon-caret-bottom" style="color: #6BCB04;" v-else></i>
+            <van-icon name="arrow-up" style="color: #D0021B;" v-if="material_list.mom_rate>=0" />
+            <van-icon name="arrow-down" style="color: #6BCB04;" v-else />
             {{material_list.mom_rate}}%
           </div>
           <div class="grid-cell">
-            <i class="el-icon-caret-top" style="color: #D0021B;" v-if="material_list.yoy_RATE>=0"></i>
-            <i class="el-icon-caret-bottom" style="color: #6BCB04;" v-else></i>
+            <van-icon name="arrow-up" style="color: #D0021B;" v-if="material_list.yoy_RATE>=0" />
+            <van-icon name="arrow-down" style="color: #6BCB04;" v-else />
             {{material_list.yoy_RATE}}%
           </div>
         </div>
@@ -48,12 +48,15 @@
       </div>
       <div class="house">
         <div :class="{'house-cell': true,'house-active': item.active}" v-for="(item,index) in house_list" :key="index" @click="houseEvent(index)">
-          <span v-if="index === 0">{{item.name}}<i class="el-icon-arrow-down" v-if="!card_active"></i><i class="el-icon-arrow-up" v-else></i></span>
+          <span v-if="index === 0">{{item.name}}
+            <van-icon name="arrow-up" v-if="!card_active" />
+            <van-icon name="arrow-down" v-else />
+        </span>
           <span v-else>{{item.name}}</span>
         </div>
       </div>
       <div class="card-box" v-show="card_active">
-        <i class="el-icon-caret-top"></i>
+        <van-icon name="arrow-up" />
         <button v-for="(item, index) in card_list" :key="index" @click="cardEvent(index)" :class="{'card-active': item.active}">{{item.name}}</button>
       </div>
       <div class="line-chart">
