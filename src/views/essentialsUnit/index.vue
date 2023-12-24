@@ -1,27 +1,31 @@
 <template>
     <section id="essentialsUnit">
-        <section class="headDesign">
-            <img class="u13" src="@sky/static/mall/essentials/u13.png" @click="magicWay"/>
-            <img class="u17" src="@sky/static/mall/essentials/u17.png" @click="magicWay"/>
+        <header class="headDesign">
+            <img class="u13" src="@sky/static/mall/essentials/u13.png" @click="magicWay" />
+            <img class="u17" src="@sky/static/mall/essentials/u17.png" @click="magicWay" />
             <span>夕阳商城</span>
-            <img class="u14" src="@sky/static/mall/essentials/u14.png" @click="searchWay"/>
-            <img class="u15" src="@sky/static/mall/essentials/u15.png" @click="comicWay"/>
+            <img class="u14" src="@sky/static/mall/essentials/u14.png" @click="searchWay" />
+            <img class="u15" src="@sky/static/mall/essentials/u15.png" @click="comicWay" />
             <div @click="comicWay">66</div>
-        </section>
+        </header>
 
-        <router-view></router-view>
+        <article class="rainbow">
+            <router-view></router-view>
+        </article>
 
-        <section class="footerDesign">
+        <footer class="footerDesign">
             <ul>
                 <li v-for="(item, index) in with_list" @click="appleWay(item, index)">
-                    <div>
-                        <img v-if="!item.active" :src="item.icon"/>
-                        <img v-else :src="item.url"/>
-                    </div>
-                    <span :class="{'to-active': item.active}">{{item.title}}</span>
+                    <main>
+                        <div>
+                            <img v-if="!item.active" :src="item.icon" />
+                            <img v-else :src="item.url" />
+                        </div>
+                        <p :class="{ 'to-active': item.active }">{{ item.title }}</p>
+                    </main>
                 </li>
             </ul>
-        </section>
+        </footer>
     </section>
 </template>
 
@@ -50,7 +54,7 @@ export default {
             item.url = require('@sky/static/mall/essentials/' + item.icon + '_selected.png');
             item.icon = require('@sky/static/mall/essentials/' + item.icon + '.png');
             item.active = false;
-            if(this.$route.path == item.path) {
+            if (this.$route.path == item.path) {
                 item.active = true;
             }
         }
@@ -75,7 +79,7 @@ export default {
         appleWay(item, index) {
             this.beanWay(index);
 
-            if(this.$route.path == item.path) return;
+            if (this.$route.path == item.path) return;
             this.$router.push({
                 path: item.path
             });
@@ -94,8 +98,10 @@ export default {
 <style lang="less" scoped>
 #essentialsUnit {
     width: 100%;
+    height: 100%;
     padding: 45px 0 50px 0;
     box-sizing: border-box;
+
     .headDesign {
         width: 100%;
         height: 45px;
@@ -106,33 +112,39 @@ export default {
         left: 0px;
         top: 0px;
         z-index: 999;
+
         .u13 {
             height: 28px;
             position: absolute;
             left: 20px;
             top: 8px;
         }
+
         .u17 {
             height: 9px;
             position: absolute;
             left: 40px;
             top: 5px;
         }
+
         .u14 {
             height: 28px;
             position: absolute;
             right: 50px;
             top: 8px;
         }
+
         .u15 {
             height: 28px;
             position: absolute;
             right: 10px;
             top: 8px;
         }
+
         span {
             font-size: 15px;
         }
+
         div {
             width: 18px;
             height: 18px;
@@ -148,6 +160,12 @@ export default {
             top: 1px;
         }
     }
+    .rainbow {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+
     .footerDesign {
         width: 100%;
         height: 50px;
@@ -157,41 +175,51 @@ export default {
         left: 0px;
         bottom: 0px;
         z-index: 100;
+
         ul {
             width: 100%;
             height: 100%;
             display: flex;
             justify-content: space-around;
+
             li {
                 width: 14%;
                 height: 100%;
                 float: left;
-                div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                main {
                     width: 100%;
-                    height: 30px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    img {
-                        width: 20px;
+                    height: fit-content;
+                    div {
+                        width: 100%;
                         height: 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        img {
+                            width: 20px;
+                            height: 20px;
+                        }
                     }
-                }
-                span {
-                    width: 100%;
-                    height: 15px;
-                    text-align: center;
-                    line-height: 15px;
-                    font-size: 13px;
-                    display: inline-block;
-                }
-                .to-active {
-                    color: @color_lv;
+
+                    p {
+                        width: 100%;
+                        height: 15px;
+                        text-align: center;
+                        font-size: 13px;
+                        margin-top: 4px;
+                    }
+
+                    .to-active {
+                        color: @color_lv;
+                    }
                 }
             }
         }
     }
-}
-</style>
+}</style>
 
 
