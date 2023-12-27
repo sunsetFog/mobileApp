@@ -15,7 +15,10 @@
 
         <footer class="footerDesign">
             <ul>
-                <li v-for="(item, index) in with_list" @click="appleWay(item, index)">
+                <li v-for="(item, index) in with_list" @click="appleWay(item, index)"
+                    :class="activeIdx == index ? 'footerScaleBounceAnim' : ''">
+                    <!-- 水波 -->
+                    <i></i>
                     <main>
                         <div>
                             <img v-if="!item.active" :src="item.icon" />
@@ -39,7 +42,8 @@ export default {
                 { title: '分类', icon: 'u31', url: '', active: false, path: '/essentialsUnit/classify/index' },
                 { title: '专题', icon: 'u27', url: '', active: false, path: '/essentialsUnit/special/index' },
                 { title: '我的', icon: 'u23', url: '', active: false, path: '/essentialsUnit/customer/index' }
-            ]
+            ],
+            activeIdx: 0
         }
     },
     // watch: {
@@ -77,6 +81,7 @@ export default {
             });
         },
         appleWay(item, index) {
+            this.activeIdx = index;
             this.beanWay(index);
 
             if (this.$route.path == item.path) return;
@@ -160,6 +165,7 @@ export default {
             top: 1px;
         }
     }
+
     .rainbow {
         width: 100%;
         height: 100%;
@@ -182,6 +188,52 @@ export default {
             display: flex;
             justify-content: space-around;
 
+            .footerScaleBounceAnim {
+                animation: footerClick 0.5s ease-in-out;
+
+                i {
+                    animation: footerripple 0.5s ease-out;
+                }
+            }
+
+            @keyframes footerClick {
+                0% {
+                    transform: scale3d(1, 1, 1);
+                }
+
+                20% {
+                    transform: scale3d(0.6, 0.6, 1);
+                }
+
+                40% {
+                    transform: scale3d(1.2, 1.2, 1);
+                }
+
+                60% {
+                    transform: scale3d(1, 1, 1);
+                }
+
+                80% {
+                    transform: scale3d(1.1, 1.1, 1);
+                }
+
+                100% {
+                    transform: scale3d(1, 1, 1);
+                }
+            }
+
+            @keyframes footerripple {
+                0% {
+                    opacity: 0.5;
+                    transform: translate(-50%, -50%) scale3d(1, 1, 1);
+                }
+
+                100% {
+                    opacity: 0;
+                    transform: translate(-50%, -50%) scale3d(6, 6, 1);
+                }
+            }
+
             li {
                 width: 14%;
                 height: 100%;
@@ -189,9 +241,25 @@ export default {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                position: relative;
+
+                i {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 0.625rem;
+                    height: 0.625rem;
+                    border-radius: 50%;
+                    background: #179cff;
+                    opacity: 0;
+                    z-index: 100;
+                }
+
                 main {
                     width: 100%;
                     height: fit-content;
+
                     div {
                         width: 100%;
                         height: 20px;
@@ -220,6 +288,7 @@ export default {
             }
         }
     }
-}</style>
+}
+</style>
 
 
